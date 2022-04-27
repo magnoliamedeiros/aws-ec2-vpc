@@ -4,24 +4,24 @@ Repositório destino a descrição do exercício prático sobre EC2 e VPC
 ### Criando e acessando uma Amazon EC2 (Elastic Compute Cloud)
 #### Passos realizados:
 1. Escolher uma imagem de máquina da Amazon (AMI - Amazon Machine Image)   
-    1.1. Ubuntu Server 20.04 LTS
+    1. _Ubuntu Server 20.04 LTS_
 2. Escolher o tipo de instância   
-    2.1. t2.micro (1 vCPUs, 1 GiB memory, EBS only - Free tier eligible)
+    1. _t2.micro (1 vCPUs, 1 GiB memory, EBS only - Free tier eligible)_
 3. Configurar detalhes da instância   
-    3.1. Nesse momento podemos deixar tudo padrão porque não temos nenhuma VPC e/ou Subnet criadas
+    1. Nesse momento podemos deixar tudo padrão porque não temos nenhuma **VPC** e/ou **Subnet** criadas
 4. Adicionar armazenamento   
-    4.1. Nesse momento podemos deixar o padrão
+    1. Nesse momento podemos deixar o padrão
 5. Adicionar tags   
-    5.1. Uma tag consiste em um par chave-valor que diferencia maiúsculas de minúsculas. Por exemplo, podemos definir uma tag com Key = Name e Value = Webserver   
-    5.2. Para o exercício definir a seguinte tag: magnolia-ec2
+    1. Uma tag consiste em um par chave-valor que diferencia maiúsculas de minúsculas. Por exemplo, podemos definir uma tag com Key = Name e Value = Webserver   
+    2. Para o exercício definir a seguinte tag: magnolia-ec2
 6. Configurar o grupo de segurança   
-    6.1. Um grupo de segurança é um conjunto de regras de firewall que controlam o tráfego da sua instância   
-    6.2. Um ponto importante explicado pelo professor é que existe duas portas de entrada na AWS, a primeira é a ACL e a segunda porta é o Security Group   
-    6.3. Estamos configurando a porta de entrada da nossa máquina   
-    6.4. As regras com origem 0.0.0.0/0 permitem que todos os endereços IP acessem sua instância   
+    1. Um grupo de segurança é um conjunto de regras de firewall que controlam o tráfego da sua instância   
+    2. Um ponto importante explicado pelo professor é que existe duas portas de entrada na AWS, a primeira é a ACL e a segunda porta é o Security Group   
+    3. Estamos configurando a porta de entrada da nossa máquina   
+    4. As regras com origem 0.0.0.0/0 permitem que todos os endereços IP acessem sua instância   
 7. Revisar o lançamento da instância   
-    7.1. Nesse momento ao clicar em iniciar (launch) precisaremos ter um par de chaves para atribuir a instância e assim concluir o processo   
-    7.2. Para criar a chave SSH faça o seguinte comando no terminal:
+    1. Nesse momento ao clicar em iniciar (launch) precisaremos ter um par de chaves para atribuir a instância e assim concluir o processo   
+    2. Para criar a chave SSH faça o seguinte comando no terminal:
     ``` 
     ssh-keygen [enter]
     Generating public/private rsa key pair.
@@ -29,9 +29,9 @@ Repositório destino a descrição do exercício prático sobre EC2 e VPC
     Enter passphrase (empty for no passphrase): [pode deixar em branco]
     Enter same passphrase again: [pode deixar em branco]
     ```    
-    7.3. Um par de chaves (key pair), consiste em uma chave privada e uma chave pública, é um conjunto de credenciais de segurança que você usa para provar sua identidade ao se conectar a uma instância   
-    7.4. Para subir a chave pública para a sua conta da AWS vamos no serviço EC2 > Network & Security > Key Pairs, clicamos em Actions > Import key pair, adicionamos um Name para identificar a key, em key pair file clicamos em Browse para procurar a chave pública e ao carregar essa chave podemos então clicar no botão de Import key pair no final da página   
-    7.5. Com a chave importada agora podemos escolher a mesma na página de Review Instance Launch e selecionar, marcar o check e finalizar clicando em Launch Instance   
+    3. Um par de chaves (key pair), consiste em uma chave privada e uma chave pública, é um conjunto de credenciais de segurança que você usa para provar sua identidade ao se conectar a uma instância   
+    4. Para subir a chave pública para a sua conta da AWS vamos no serviço EC2 > Network & Security > Key Pairs, clicamos em Actions > Import key pair, adicionamos um Name para identificar a key, em key pair file clicamos em Browse para procurar a chave pública e ao carregar essa chave podemos então clicar no botão de Import key pair no final da página   
+    5. Com a chave importada agora podemos escolher a mesma na página de Review Instance Launch e selecionar, marcar o check e finalizar clicando em Launch Instance   
 8. Agora é possível conectar na instância via SSH:
     ```
     ssh -i id_rsa ubuntu@[ip-ou-dns-publico-do-ec2]   
