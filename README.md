@@ -72,7 +72,7 @@ my-subnet-grupo-8-1c (10.8.0.192/26)
 ```
 
 ### Route Tables e Internet Gateways
-Route tables? São tabelas de rotas que podemos adicionar a um grupo de subnets algum tipo de recurso específico como exemplo: internet. Uma rede que não tem na sua Route Table atrelado uma Internet Gateway é uma rede privada.
+Route tables? São tabelas de rotas que podemos adicionar a um grupo de subnets algum tipo de recurso específico como exemplo: internet. Uma rede que não tem na sua Route Table atrelado uma Internet Gateway é uma rede privada.   
 ACL (Access Control List) - Uma ACL é uma lista sequencial de instruções de permissão ou negação que se aplicam a rede.
 Bastion Host: conecta o mundo externo a uma instância dentro de uma determinada VPC. Bastion é uma máquina pública que dará acesso a uma máquina privada.
 #### Passos realizados:
