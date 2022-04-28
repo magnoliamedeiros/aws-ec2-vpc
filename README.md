@@ -1,8 +1,7 @@
 # Exercício prático - Semana 1
-Repositório destino a descrição do exercício prático sobre EC2 e VPC
-
-### Criando e acessando uma Amazon EC2 (Elastic Compute Cloud)
-#### Passos:
+Repositório destino a descrição do exercício prático sobre EC2 e VPC.
+## Criar e acessar uma Amazon EC2 (Elastic Compute Cloud)
+### Passos:
 1. Escolher uma imagem de máquina da Amazon (AMI - Amazon Machine Image)   
     1. _Ubuntu Server 20.04 LTS_
 2. Escolher o tipo de instância   
@@ -36,9 +35,9 @@ Repositório destino a descrição do exercício prático sobre EC2 e VPC
     ```
     ssh -i id_rsa ubuntu@[ip-ou-dns-publico-do-ec2]   
     ```
-### Criando uma VPC (Virtual Private Cloud)
+## Criando uma VPC (Virtual Private Cloud)
 O que é Amazon VPC? A Amazon Virtual Private Cloud (Amazon VPC) permite iniciar recursos da AWS em uma rede virtual definida por nós. Essa rede virtual se assemelha a uma rede tradicional, com os benefícios de usar a infraestrutura escalável da AWS.
-#### Passos:
+### Passos:
 1. Calcular o número de subredes desejada e para isso podemos utilizar o site: <https://www.site24x7.com/pt/tools/ipv4-sub-rede-calculadora.html>
 2. Acessar o console da Amazon VPC em: <https://console.aws.amazon.com/vpc/>   
 3. No painel de navegação, escolher **Your VPCs** > **Create VPC**
@@ -49,9 +48,9 @@ O que é Amazon VPC? A Amazon Virtual Private Cloud (Amazon VPC) permite iniciar
 - **IPv6 CIDR block**: _No IPv6 CIDR block_
 - **Tenancy**: _Default_   
 
-### Criando Subnets (Sub-redes) para a VPC
+## Criando Subnets (Sub-redes) para a VPC
 O que é uma sub-rede? é uma subdivisão lógica de uma rede.
-#### Passos:
+### Passos:
 Porque criamos subredes (subnets)? para que possamos ter datacenters diferentes em cada subrede e assim manter a alta disponibilidade.
 1. No painel de navegação, escolher **Subnets** > **Create subnet**
 2. Em **VPC ID** selecione a **VPC** criada anteriormente
@@ -72,8 +71,10 @@ my-subnet-grupo-8-1c (10.8.0.192/26)
 ```
 
 ### Route Tables e Internet Gateways
-Route tables? São tabelas de rotas que podemos adicionar a um grupo de subnets algum tipo de recurso específico como exemplo: internet. Uma rede que não tem na sua Route Table atrelado uma Internet Gateway é uma rede privada.   
-ACL (Access Control List) - Uma ACL é uma lista sequencial de instruções de permissão ou negação que se aplicam a rede.
+Route tables: São tabelas de rotas que podemos adicionar a um grupo de subnets algum tipo de recurso específico como exemplo: internet. Uma rede que não tem na sua Route Table atrelado uma Internet Gateway é uma rede privada.   
+
+ACL (Access Control List): Uma ACL é uma lista sequencial de instruções de permissão ou negação que se aplicam a rede.   
+
 Bastion Host: conecta o mundo externo a uma instância dentro de uma determinada VPC. Bastion é uma máquina pública que dará acesso a uma máquina privada.
 #### Passos realizados:
 1. Criar um Internet Gateways (para cada VPC) para
